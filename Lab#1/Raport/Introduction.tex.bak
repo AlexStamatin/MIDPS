@@ -1,10 +1,10 @@
-\section*{Laboratory work \#1}
+\section*{Lucrarea de laborator \#1}
 \phantomsection
 
 \section{Scopul lucrarii de laborator}
-Aici se include scopul lucrarii de laborator.
+Obtinerea deprinderilor de utilizare a Version Control Systems si studierea modului de setare a unui server)
 \section{Obiective}
 
-Obiectivele pot fi copiate din repozitoriul online.
+Studierea Version Control Systems (git - bitbucket - mercurial - svn)
 
 \clearpage

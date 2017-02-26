@@ -1,17 +1,91 @@
-\section{Laboratory work implementation}
+\section{Efectuarea lucrarii de laborator}
 
-\subsection{Tasks and Points}
+\subsection{Sarcinile propuse}
+\begin{itemize}
+	\item Initializarea unui nou repozitoriu
+	\item Generarea si adaugarea cheilor SSH
+	\item Configurarea VCS 
+	\item Crearea branch-urilor (cel putin 2)
+	\item Cel putin 1 commit pe fiecare branch
+	\item Setarea unui branch to track a remote origin
+	\item Resetarea unui branch la commit-ul anterior
+	\item Salvarea temporara a schimbarilor fara commit imediat
+	\item Utilizarea fisierului .gitignore
+	\item Merge la 2 branch-uri
+	\item Rezolvarea conflictelor
+\end{itemize}
 
-Aici trebuie sa fie lista de task-uri care au fost implementate.
 
 \subsection{Analiza lucrarii de laborator}
 
-Adauga link la repozitoriul tau.
-Explica fiecare din task-urile realizate. Explica acesta cu cuvintele tale. Cu cit mai bine va fi explicat,
-cu atit mai putine intrebari vei avea la aparare.
+Link la repozitoriu: https://github.com/AlexStamatin/MIDPS
 
-\subsection{Imagini}
+\begin{itemize}
+	\item Initializarea unui nou repozitoriu
+		
+		Aceasta sarcina poate fi indeplinita atat online utilizand site-ul github cat si utilizand comanda \textit{git init}
+		In cazul dat repozitoriul nou a fost creat accesand pagina personala de pe github cu ajutorul optiunii "New Repository" din compartimentul "Your repositories".
+		
+		\begin{figure}[h]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 1 create repo"}
+ 			 \caption{Crearea repozitoriului}
+ 			 \label{fig:create_repo}
+		\end{figure}
+\newpage
+Repozitoriul a fost clonat pe masina locala utilizand comanda \textit{git clone}.
 
-Adauga cite cel putin o imagine (sau mai multe) pentru fiecare functionalitate adaugata.
+		\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 1 cloning"}
+ 			 \caption{Clonarea pe masina locala}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+		
+\item Generarea si adaugarea cheilor SSH
 
-\clearpage
+Utilizand protocolul SSH este posibila autentificarea la servere si servicii aflate la distanta. Cu ajutorul cheilor SSH este posibila conectarea la github fara a fi necesara introducerea username-ului si parolei la fiecare vizita.
+Cheile SSH pot fi generate cu ajutorul comenzii \textit{ssh-keygen}. Cheile publice existente pot fi afisate cu ajutorul comenzii \textit{cat $~/.ssh/.ssh/id_rsa.pub\sim$}
+
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 2 SSH"}
+ 			 \caption{Cheia publica SSH}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\item Configurarea VCS
+
+Configurarile git de baza pot fi modificate cu ajutorul comenzii \textit{git config --global user.name <name>} si \textit{git config --global user.email <email>}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 3 gitconfig"}
+ 			 \caption{Configurarea unor parametri}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+		
+Fisiere noi spre indexare pot fi adaugate cu ajutorul comenzii \textit{git add}. Pentru a inregistra toate schimbarile in comparatie cu fisierele de pe git se utilizeaza comanda \textit{git commit -m "Commit comment"}. Pentru a incarca fisierele indexate pe git utilizam comanda \textit{git push}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 3 commit"}
+ 			 \caption{Adaugarea fisierelor la repozitoriu}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+		
+\item Crearea branch-urilor
+
+Pentru a crea un branch este necesara utilizarea comenzii \textit{git branch <name>} Comanda \textit{git branch} ne afiseaza branch-urile. Pentru a crea un branch nou si a face switch la el se utilizeaza comanda \textit{git branch -b <name>}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 4 create branch"}
+ 			 \caption{Crearea branch-urilor}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\item Crearea commit-urilor de pe fiecare branch
+
+\end{itemize}
+
