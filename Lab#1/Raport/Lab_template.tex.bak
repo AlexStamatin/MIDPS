@@ -5,7 +5,6 @@
 \usepackage{setspace}
 \usepackage{biblatex}
 \usepackage{graphicx}
-\usepackage{fixltx2e}
 \providecommand\phantomsection{}
   
 \begin{document}
