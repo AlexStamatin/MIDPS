@@ -45,7 +45,7 @@ Repozitoriul a fost clonat pe masina locala utilizand comanda \textit{git clone}
 \item Generarea si adaugarea cheilor SSH
 
 Utilizand protocolul SSH este posibila autentificarea la servere si servicii aflate la distanta. Cu ajutorul cheilor SSH este posibila conectarea la github fara a fi necesara introducerea username-ului si parolei la fiecare vizita.
-Cheile SSH pot fi generate cu ajutorul comenzii \textit{ssh-keygen}. Cheile publice existente pot fi afisate cu ajutorul comenzii \textit{cat $~/.ssh/.ssh/id_rsa.pub\sim$}
+Cheile SSH pot fi generate cu ajutorul comenzii \textit{ssh-keygen}. Cheile publice existente pot fi afisate cu ajutorul comenzii \textit{cat $\sim$ $/.ssh/.ssh/id\_rsa.pub$}
 
 	\begin{figure}[h!]
 			\centering
@@ -56,7 +56,7 @@ Cheile SSH pot fi generate cu ajutorul comenzii \textit{ssh-keygen}. Cheile publ
 
 \item Configurarea VCS
 
-Configurarile git de baza pot fi modificate cu ajutorul comenzii \textit{git config --global user.name <name>} si \textit{git config --global user.email <email>}
+Configurarile git de baza pot fi modificate cu ajutorul comenzii \textit{git config --global user.name "name"} si \textit{git config --global user.email "email"}
 
 \begin{figure}[h!]
 			\centering
@@ -76,7 +76,7 @@ Fisiere noi spre indexare pot fi adaugate cu ajutorul comenzii \textit{git add}.
 		
 \item Crearea branch-urilor
 
-Pentru a crea un branch este necesara utilizarea comenzii \textit{git branch <name>} Comanda \textit{git branch} ne afiseaza branch-urile. Pentru a crea un branch nou si a face switch la el se utilizeaza comanda \textit{git branch -b <name>}
+Pentru a crea un branch este necesara utilizarea comenzii \textit{git branch "name"} Comanda \textit{git branch} ne afiseaza branch-urile. Pentru a crea un branch nou si a face switch la el se utilizeaza comanda \textit{git branch -b "name"}
 
 \begin{figure}[h!]
 			\centering
@@ -86,6 +86,8 @@ Pentru a crea un branch este necesara utilizarea comenzii \textit{git branch <na
 		\end{figure}
 
 \item Crearea commit-urilor de pe fiecare branch
+
+
 
 \end{itemize}
 
