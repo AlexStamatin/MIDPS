@@ -51,7 +51,7 @@ Cheile SSH pot fi generate cu ajutorul comenzii \textit{ssh-keygen}. Cheile publ
 			\centering
  			 \includegraphics[scale=0.75]{"task 2 SSH"}
  			 \caption{Cheia publica SSH}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:SSH_key}
 		\end{figure}
 
 \item Configurarea VCS
@@ -62,7 +62,7 @@ Configurarile git de baza pot fi modificate cu ajutorul comenzii \textit{git con
 			\centering
  			 \includegraphics[scale=0.75]{"task 3 gitconfig"}
  			 \caption{Configurarea unor parametri}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:gitconfig}
 		\end{figure}
 		
 Fisiere noi spre indexare pot fi adaugate cu ajutorul comenzii \textit{git add}. Pentru a inregistra toate schimbarile in comparatie cu fisierele de pe git se utilizeaza comanda \textit{git commit -m "Commit comment"}. Pentru a incarca fisierele indexate pe git utilizam comanda \textit{git push}
@@ -71,7 +71,7 @@ Fisiere noi spre indexare pot fi adaugate cu ajutorul comenzii \textit{git add}.
 			\centering
  			 \includegraphics[scale=0.75]{"task 3 commit"}
  			 \caption{Adaugarea fisierelor la repozitoriu}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:commit}
 		\end{figure}
 		
 \item Crearea branch-urilor
@@ -82,7 +82,7 @@ Pentru a crea un branch este necesara utilizarea comenzii \textit{git branch "na
 			\centering
  			 \includegraphics[scale=0.75]{"task 4 create branch"}
  			 \caption{Crearea branch-urilor}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:create_branch}
 		\end{figure}
 \newpage
 \item Crearea commit-urilor de pe fiecare branch
@@ -93,14 +93,14 @@ Initial facem switch la branch-ul de pe care dorim sa facem commit cu ajutorul c
 			\centering
  			 \includegraphics[scale=0.75]{"task 5 NBranch1"}
  			 \caption{Commit in NBranch1}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:NBranch1}
 		\end{figure}
 
 \begin{figure}[h!]
 			\centering
  			 \includegraphics[scale=0.75]{"task 5 NBranch2"}
  			 \caption{Commit in NBranch2}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:NBranch2}
 		\end{figure}
 \newpage
 \item Setarea unui branch to track a remote origin
@@ -111,14 +111,14 @@ A fost creat un nou branch trbranch to track remote origin utilizand comanda \te
 			\centering
  			 \includegraphics[scale=0.75]{"task 6 track"}
  			 \caption{Track remote origin}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:track}
 		\end{figure}
 
 \begin{figure}[h!]
 			\centering
  			 \includegraphics[scale=0.75]{"task 6 push"}
  			 \caption{Push to trbranch}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:push}
 		\end{figure}
 
 \item Resetarea unui branch la commit-ul anterior
@@ -129,7 +129,7 @@ Cu ajutorul comenzii \textit{git log} identificam commit-ul la care dorim sa res
 			\centering
  			 \includegraphics[scale=0.75]{"task 7 log"}
  			 \caption{Identificarea commit-ului}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:log}
 		\end{figure}
 
 Apoi cu ajutorul \textit{git reset "mode" "commit"} se reseteaza head-ul branch-ului curent la "commit". Poate fi utilizat unul dintre modurile soft, mixed(optiunea default), hard, merge sau keep.
@@ -142,7 +142,7 @@ Uneori este necesar ca in timp ce se lucreaza asupra unei parti din proiect sa s
 			\centering
  			 \includegraphics[scale=0.75]{"task 8 stash"}
  			 \caption{Utilizarea git stash}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:stash}
 		\end{figure}
 
 Lista stash-urilor pastrate poate fi vizualizata cu comanda \textit{git stash list}
@@ -151,11 +151,11 @@ Lista stash-urilor pastrate poate fi vizualizata cu comanda \textit{git stash li
 			\centering
  			 \includegraphics[scale=0.75]{"task 8 stashlist"}
  			 \caption{Vizualizarea stash-urilor curente}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:stashlist}
 		\end{figure}
 		
 Stash-urile pastrate pot fi aplicate cu ajutorul \textit{git stash apply}
-
+\newpage
 	\item Utilizarea fisierului .gitignore
 	
 Fisierul .gitignore este utilizat pentru a ne asigura ca anumite fisiere nu vor fi indexate si vor fi ignorate de catre git. Acesta nu afecteaza fisierele care deja sunt indexate.
@@ -166,13 +166,37 @@ Printre fisierele ce se recomanda a fi ignorate se numara fisiere auziliare LaTe
 			\centering
  			 \includegraphics[scale=0.75]{"task 9 gitignore"}
  			 \caption{Fisierul .gitignore}
- 			 \label{fig:clone_repo}
+ 			 \label{fig:gitignore}
 		\end{figure}
-
+\newpage
 \item Merge la 2 branch-uri si rezolvarea conflictelor
 
+Mai multe branch-uri pot fi adaugate la un singur branch cu ajutorul comenzii \textit{git merge}. Dar pot aparea conflicte din cauza diferentelor dintre continuturile fisierelor indexate in aceste branch-uri.
 
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 9 merge"}
+ 			 \caption{Conflictul aparut in urma comenzii git merge}
+ 			 \label{fig:merge}
+		\end{figure}
 
+Conflictul poate fi rezolvat manual editand fisierele ce il cauzeaza.
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 9 conflict"}
+ 			 \caption{Rezolvarea conflictului}
+ 			 \label{fig:conflict}
+		\end{figure}
+
+Dupa rezolvarea conflictului se paote efectua merge-ul
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 9 solved"}
+ 			 \caption{Commit dupa rezolvarea conflictului}
+ 			 \label{fig:solved}
+		\end{figure}
 
 
 
