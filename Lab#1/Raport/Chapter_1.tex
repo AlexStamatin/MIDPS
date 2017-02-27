@@ -84,8 +84,95 @@ Pentru a crea un branch este necesara utilizarea comenzii \textit{git branch "na
  			 \caption{Crearea branch-urilor}
  			 \label{fig:clone_repo}
 		\end{figure}
-
+\newpage
 \item Crearea commit-urilor de pe fiecare branch
+
+Initial facem switch la branch-ul de pe care dorim sa facem commit cu ajutorul comenzii \textit{git checkout "name"}. Apoi cu \textit{git add} adaugam fisierele spre indexare.
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 5 NBranch1"}
+ 			 \caption{Commit in NBranch1}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 5 NBranch2"}
+ 			 \caption{Commit in NBranch2}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+\newpage
+\item Setarea unui branch to track a remote origin
+
+A fost creat un nou branch trbranch to track remote origin utilizand comanda \textit{git branch --track "name" origin/master}. Ulterior a fost creat si adaugat un commit in trbranch cu comanda \textit{git push origin "name"}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 6 track"}
+ 			 \caption{Track remote origin}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 6 push"}
+ 			 \caption{Push to trbranch}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\item Resetarea unui branch la commit-ul anterior
+
+Cu ajutorul comenzii \textit{git log} identificam commit-ul la care dorim sa resetam branch-ul
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 7 log"}
+ 			 \caption{Identificarea commit-ului}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+Apoi cu ajutorul \textit{git reset "mode" "commit"} se reseteaza head-ul branch-ului curent la "commit". Poate fi utilizat unul dintre modurile soft, mixed(optiunea default), hard, merge sau keep.
+
+\item Salvarea temporara a schimbarilor fara commit imediat
+
+Uneori este necesar ca in timp ce se lucreaza asupra unei parti din proiect sa se faca switch la un alt branch dar fara a face un commit a modificarilor curente. Acest lucru poate fi realizat cu ajutorul comenzii \textit{git stash}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 8 stash"}
+ 			 \caption{Utilizarea git stash}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+Lista stash-urilor pastrate poate fi vizualizata cu comanda \textit{git stash list}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 8 stashlist"}
+ 			 \caption{Vizualizarea stash-urilor curente}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+		
+Stash-urile pastrate pot fi aplicate cu ajutorul \textit{git stash apply}
+
+	\item Utilizarea fisierului .gitignore
+	
+Fisierul .gitignore este utilizat pentru a ne asigura ca anumite fisiere nu vor fi indexate si vor fi ignorate de catre git. Acesta nu afecteaza fisierele care deja sunt indexate.
+
+Printre fisierele ce se recomanda a fi ignorate se numara fisiere auziliare LaTeX, imagini e.t.c.
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 9 gitignore"}
+ 			 \caption{Fisierul .gitignore}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\item Merge la 2 branch-uri si rezolvarea conflictelor
+
+
+
 
 
 
