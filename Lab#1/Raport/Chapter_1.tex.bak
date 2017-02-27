@@ -1,0 +1,180 @@
+\section{Efectuarea lucrarii de laborator}
+
+\subsection{Sarcinile propuse}
+\begin{itemize}
+	\item Initializarea unui nou repozitoriu
+	\item Generarea si adaugarea cheilor SSH
+	\item Configurarea VCS 
+	\item Crearea branch-urilor (cel putin 2)
+	\item Cel putin 1 commit pe fiecare branch
+	\item Setarea unui branch to track a remote origin
+	\item Resetarea unui branch la commit-ul anterior
+	\item Salvarea temporara a schimbarilor fara commit imediat
+	\item Utilizarea fisierului .gitignore
+	\item Merge la 2 branch-uri
+	\item Rezolvarea conflictelor
+\end{itemize}
+
+
+\subsection{Analiza lucrarii de laborator}
+
+Link la repozitoriu: https://github.com/AlexStamatin/MIDPS
+
+\begin{itemize}
+	\item Initializarea unui nou repozitoriu
+		
+		Aceasta sarcina poate fi indeplinita atat online utilizand site-ul github cat si utilizand comanda \textit{git init}
+		In cazul dat repozitoriul nou a fost creat accesand pagina personala de pe github cu ajutorul optiunii "New Repository" din compartimentul "Your repositories".
+		
+		\begin{figure}[h]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 1 create repo"}
+ 			 \caption{Crearea repozitoriului}
+ 			 \label{fig:create_repo}
+		\end{figure}
+\newpage
+Repozitoriul a fost clonat pe masina locala utilizand comanda \textit{git clone}.
+
+		\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 1 cloning"}
+ 			 \caption{Clonarea pe masina locala}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+		
+\item Generarea si adaugarea cheilor SSH
+
+Utilizand protocolul SSH este posibila autentificarea la servere si servicii aflate la distanta. Cu ajutorul cheilor SSH este posibila conectarea la github fara a fi necesara introducerea username-ului si parolei la fiecare vizita.
+Cheile SSH pot fi generate cu ajutorul comenzii \textit{ssh-keygen}. Cheile publice existente pot fi afisate cu ajutorul comenzii \textit{cat $\sim$ $/.ssh/.ssh/id\_rsa.pub$}
+
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 2 SSH"}
+ 			 \caption{Cheia publica SSH}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\item Configurarea VCS
+
+Configurarile git de baza pot fi modificate cu ajutorul comenzii \textit{git config --global user.name "name"} si \textit{git config --global user.email "email"}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 3 gitconfig"}
+ 			 \caption{Configurarea unor parametri}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+		
+Fisiere noi spre indexare pot fi adaugate cu ajutorul comenzii \textit{git add}. Pentru a inregistra toate schimbarile in comparatie cu fisierele de pe git se utilizeaza comanda \textit{git commit -m "Commit comment"}. Pentru a incarca fisierele indexate pe git utilizam comanda \textit{git push}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 3 commit"}
+ 			 \caption{Adaugarea fisierelor la repozitoriu}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+		
+\item Crearea branch-urilor
+
+Pentru a crea un branch este necesara utilizarea comenzii \textit{git branch "name"} Comanda \textit{git branch} ne afiseaza branch-urile. Pentru a crea un branch nou si a face switch la el se utilizeaza comanda \textit{git branch -b "name"}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 4 create branch"}
+ 			 \caption{Crearea branch-urilor}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+\newpage
+\item Crearea commit-urilor de pe fiecare branch
+
+Initial facem switch la branch-ul de pe care dorim sa facem commit cu ajutorul comenzii \textit{git checkout "name"}. Apoi cu \textit{git add} adaugam fisierele spre indexare.
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 5 NBranch1"}
+ 			 \caption{Commit in NBranch1}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 5 NBranch2"}
+ 			 \caption{Commit in NBranch2}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+\newpage
+\item Setarea unui branch to track a remote origin
+
+A fost creat un nou branch trbranch to track remote origin utilizand comanda \textit{git branch --track "name" origin/master}. Ulterior a fost creat si adaugat un commit in trbranch cu comanda \textit{git push origin "name"}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 6 track"}
+ 			 \caption{Track remote origin}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 6 push"}
+ 			 \caption{Push to trbranch}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\item Resetarea unui branch la commit-ul anterior
+
+Cu ajutorul comenzii \textit{git log} identificam commit-ul la care dorim sa resetam branch-ul
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 7 log"}
+ 			 \caption{Identificarea commit-ului}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+Apoi cu ajutorul \textit{git reset "mode" "commit"} se reseteaza head-ul branch-ului curent la "commit". Poate fi utilizat unul dintre modurile soft, mixed(optiunea default), hard, merge sau keep.
+
+\item Salvarea temporara a schimbarilor fara commit imediat
+
+Uneori este necesar ca in timp ce se lucreaza asupra unei parti din proiect sa se faca switch la un alt branch dar fara a face un commit a modificarilor curente. Acest lucru poate fi realizat cu ajutorul comenzii \textit{git stash}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 8 stash"}
+ 			 \caption{Utilizarea git stash}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+Lista stash-urilor pastrate poate fi vizualizata cu comanda \textit{git stash list}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 8 stashlist"}
+ 			 \caption{Vizualizarea stash-urilor curente}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+		
+Stash-urile pastrate pot fi aplicate cu ajutorul \textit{git stash apply}
+
+	\item Utilizarea fisierului .gitignore
+	
+Fisierul .gitignore este utilizat pentru a ne asigura ca anumite fisiere nu vor fi indexate si vor fi ignorate de catre git. Acesta nu afecteaza fisierele care deja sunt indexate.
+
+Printre fisierele ce se recomanda a fi ignorate se numara fisiere auziliare LaTeX, imagini e.t.c.
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task 9 gitignore"}
+ 			 \caption{Fisierul .gitignore}
+ 			 \label{fig:clone_repo}
+		\end{figure}
+
+\item Merge la 2 branch-uri si rezolvarea conflictelor
+
+
+
+
+
+
+\end{itemize}
+

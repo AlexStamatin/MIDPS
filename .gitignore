@@ -1,0 +1,31 @@
+#Fisiere auxiliare LateX
+            
+.aux
+*.bbl
+*.blg
+*.dvi
+*.fdb_latexmk
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nav
+*.nlo
+*.out
+*.pdf              
+*.pdfsync
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+
+#Fisiere generate de Codeblocks
+
+*.depend  
+*.layout  
