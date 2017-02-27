@@ -1,8 +1,11 @@
 #Fisiere auxiliare LateX
             
-.aux
+*.aux
+*.bak
 *.bbl
 *.blg
+*.bib
+*.bcf
 *.dvi
 *.fdb_latexmk
 *.glg
@@ -20,6 +23,7 @@
 *.out
 *.pdf              
 *.pdfsync
+*.run.xml
 *.snm
 *.synctex.gz
 *.toc
@@ -29,3 +33,7 @@
 
 *.depend  
 *.layout  
+
+#Imagini
+
+*.png

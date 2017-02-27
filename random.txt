@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Is determinism true ?
+=======
+Is determinism false?
+>>>>>>> NBranch2
