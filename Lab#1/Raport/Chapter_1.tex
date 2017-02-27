@@ -13,6 +13,7 @@
 	\item Utilizarea fisierului .gitignore
 	\item Merge la 2 branch-uri
 	\item Rezolvarea conflictelor
+	\item Utilizarea tag-urilor
 \end{itemize}
 
 
@@ -197,8 +198,24 @@ Dupa rezolvarea conflictului se paote efectua merge-ul
  			 \caption{Commit dupa rezolvarea conflictului}
  			 \label{fig:solved}
 		\end{figure}
+\newpage
+\item Utilizarea tag-urilor
 
+Tag-urile sunt utilizate pentru a marca commit-uri importante. Exista doua tipuri de tag-uri: lightweight si annotated. Un tag lightweight este ca un branch care nu se schimba, este un pointer la un commit specific. Pentru a utiliza acest tip de tag se apeleaza comanda \textit{git tag "tagname"}. Tag-urile annotated sunt pastrate ca obiecte in baza de date Git. Pentru a crea asa un tag se utilizeaza comanda \textit{git tag -am "mesaj" "tagname"}
 
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task fin lw"}
+ 			 \caption{Crearea unui tag lightweight}
+ 			 \label{fig:solved}
+		\end{figure}
+
+\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"task fin lw"}
+ 			 \caption{Crearea unui tag annotated si indexarea tagurilor}
+ 			 \label{fig:solved}
+		\end{figure}
 
 \end{itemize}
 
