@@ -1,4 +1,4 @@
-#include "Calc.h"
+﻿#include "Calc.h"
 
 
 Calc::Calc(QWidget *parent)
@@ -177,8 +177,19 @@ void Calc::EqPress() {
 	NextOper = true;
 
 }
-void Calc::DeciPress() {}
-void Calc::SgnPress() {}
+void Calc::DeciPress() {
+
+	if (NextOper)
+		ui->Rez_label->setText("0");
+	if (!ui->Rez_label->text().contains('.'))
+		ui->Rez_label->setText(ui->Rez_label->text() + tr("."));
+	NextOper = false;
+}
+void Calc::SgnPress() {
+
+
+
+}
 void Calc::BackspacePress() {}
 void Calc::ClearPress() {}
 void Calc::ClearEPress() {}
@@ -192,15 +203,15 @@ bool Calc::calculation(double firstOP, QString oper)
 	{
 		CurrRez -= firstOP;
 	}
-	else if (oper == "?")
+	else if (oper == "*")
 	{
-		CurrRez = CurrRez*firstOP;
+		CurrOp *= firstOP;
 	}
-	else if (oper == "?")
+	else if (oper == "/")
 	{
 		if (firstOP == 0.0)
 			return false;
-			CurrRez = CurrRez/firstOP;
+			CurrOp /= firstOP;
 	}
 	return true;
 }

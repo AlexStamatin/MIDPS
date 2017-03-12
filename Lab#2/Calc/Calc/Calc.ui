@@ -627,7 +627,7 @@ background-color:qlineargradient(x1:0, y1:0, z2:0, y2:1,
 }</string>
     </property>
     <property name="text">
-     <string>×</string>
+     <string>*</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_backspace">
@@ -717,7 +717,7 @@ background-color:qlineargradient(x1:0, y1:0, z2:0, y2:1,
 }</string>
     </property>
     <property name="text">
-     <string>÷</string>
+     <string>/</string>
     </property>
    </widget>
   </widget>

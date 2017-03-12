@@ -413,10 +413,10 @@ public:
         pushButton_6->setText(QApplication::translate("CalcClass", "6", 0));
         pushButton_substraction->setText(QApplication::translate("CalcClass", "-", 0));
         pushButton_9->setText(QApplication::translate("CalcClass", "9", 0));
-        pushButton_multiplication->setText(QApplication::translate("CalcClass", "\303\227", 0));
+        pushButton_multiplication->setText(QApplication::translate("CalcClass", "*", 0));
         pushButton_backspace->setText(QApplication::translate("CalcClass", "\342\214\253", 0));
         pushButton_sqr->setText(QApplication::translate("CalcClass", "x^2", 0));
-        pushButton_division->setText(QApplication::translate("CalcClass", "\303\267", 0));
+        pushButton_division->setText(QApplication::translate("CalcClass", "/", 0));
     } // retranslateUi
 
 };
