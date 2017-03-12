@@ -25,7 +25,7 @@ class Ui_CalcClass
 {
 public:
     QWidget *centralWidget;
-    QLabel *label;
+    QLabel *Rez_label;
     QPushButton *pushButton_pow;
     QPushButton *pushButton_1;
     QPushButton *pushButton_4;
@@ -57,13 +57,13 @@ public:
         CalcClass->resize(360, 450);
         centralWidget = new QWidget(CalcClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(0, 10, 360, 75));
+        Rez_label = new QLabel(centralWidget);
+        Rez_label->setObjectName(QStringLiteral("Rez_label"));
+        Rez_label->setGeometry(QRect(0, 34, 360, 51));
         QFont font;
         font.setPointSize(20);
-        label->setFont(font);
-        label->setStyleSheet(QLatin1String("QLabel\n"
+        Rez_label->setFont(font);
+        Rez_label->setStyleSheet(QLatin1String("QLabel\n"
 "{\n"
 "	qproperty-alignment: 'AlignVCenter | AlignRight';\n"
 "	border: none;\n"
@@ -393,7 +393,7 @@ public:
     void retranslateUi(QMainWindow *CalcClass)
     {
         CalcClass->setWindowTitle(QApplication::translate("CalcClass", "Calc", 0));
-        label->setText(QApplication::translate("CalcClass", "0", 0));
+        Rez_label->setText(QApplication::translate("CalcClass", "0", 0));
         pushButton_pow->setText(QApplication::translate("CalcClass", "^", 0));
         pushButton_1->setText(QApplication::translate("CalcClass", "1", 0));
         pushButton_4->setText(QApplication::translate("CalcClass", "4", 0));

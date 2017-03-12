@@ -14,13 +14,13 @@
    <string>Calc</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="Rez_label">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>10</y>
+      <y>34</y>
       <width>360</width>
-      <height>75</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
