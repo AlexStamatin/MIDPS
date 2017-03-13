@@ -1,0 +1,160 @@
+\section{Efectuarea lucrarii de laborator}
+
+\subsection{Sarcinile propuse}
+\begin{itemize}
+	\item Realizarea unui simplu GUI calculator care suporta urmatoarele functii:+,-,/,*,putere,radical,InversareSemn(+/-),operatii cu numere zecimale
+	\item Divizarea proiectului in doua module - Interfata grafica(Modul GUI) si Modulul de baza(Core Module)
+\end{itemize}
+
+
+\subsection{Analiza lucrarii de laborator}
+
+Link la repozitoriu: https://github.com/AlexStamatin/MIDPS
+
+	In cadrul acestei lucrari de laborator am elaborat un calculator cu interfata grafica pentru utilizator. Pentru realizarea acestui scop a fost utilizat framework-ul Qt pentru limbajul C++. Datorita add-on-ului Qt pentru Microsoft Visual studio 2015 a fost posibila dezvoltarea interfetei grafice in cadrul Qt Designer si a modului de baza in cadrul Visual Studio.
+
+\begin{itemize}
+	\item Crearea interfetei grafice
+	
+	Interfata grafica a fost creata cu ajutorul Qt Designer. Au fost plasate 2 campuri pentru afisarea textului temp label si Rez label. In temp label sunt afisate operatiunile curente iar Rez label afiseaza rezultatul. De asemenea au fost adaugate butoane pentru toate operatiunile suportate de calculator si pentru introducerea cifrelor.
+		\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"pushbutton"}
+ 			 \caption{Elementele grafice ale calculatorului}
+ 			 \label{fig:GUI element}
+		\end{figure}	
+	
+	A fost editat style-sheet-ul componentelor grafice pentru a modifica aspectul acestora(culoarea, granitele, etc.). Astfel a fost obtinut un fisier Calc.ui ce reprezinta interfata grafica a calculatorului.
+	
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"uicalc"}
+ 			 \caption{Calc.ui}
+ 			 \label{fig:Calcui}
+		\end{figure}
+	
+	\newpage
+	\item Dezvoltarea modulului de baza
+	
+In cadrul clasei Calc au fost create private-sloturi pentru toate functionalitatile suportate de calculator.
+\begin{lstlisting}
+private slots:
+
+    void DigitPress();
+    void SqrtOpPress();
+    void SqrOpPress();
+    void InvertPress();
+    void AddOpPress();
+    void MultOpPress();
+    void EqPress();
+    void DeciPress();
+    void SgnPress();
+    void BackspacePress();
+    void ClearPress();
+\end{lstlisting}
+
+Functia DigitPress() trateaza apasarea tastelor numerice
+
+\begin{lstlisting}
+currNum = (ui->Rez_label->text() + button->text()).toDouble();
+\end{lstlisting}
+
+Functia SqrtOpPress() trateaza efectuarea operatiunii radacina patrata
+
+\begin{lstlisting}
+rez = std::sqrt(oper);
+\end{lstlisting}
+
+Functia Sqr() trateaza efectuarea operatiunii ridicarea la patrat
+
+\begin{lstlisting}
+rez = std::sqrt(oper);
+\end{lstlisting}
+
+Functia InvertPress() trateaza efectuarea a operatiunii de inversare a numarului
+
+\begin{lstlisting}
+if (oper < 0.0)
+	{
+		InvalidOp();
+		return;
+	}
+	rez = 1.0 / oper;
+\end{lstlisting}
+
+Functia AddOpPress() trateaza efectuarea operatiunilor de adunare si scadere
+
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"Add1"}
+ 			 \caption{Adunarea a 2 numere}
+ 			 \label{fig:Calcui}
+		\end{figure}
+		
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"Add2"}
+ 			 \caption{Rezultatul adunarii}
+ 			 \label{fig:Calcui}
+		\end{figure}
+
+Functia MultOpPress trateaza efectuarea operatiunilor de inmultire si impartire
+
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"Mult1"}
+ 			 \caption{Inmultirea a 2 numere}
+ 			 \label{fig:Calcui}
+		\end{figure}
+		
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"Mult2"}
+ 			 \caption{Rezultatul inmultirii}
+ 			 \label{fig:Calcui}
+		\end{figure}
+\newpage
+Functia EqPress() trateaza afisarea rezultatului calculelor
+
+\begin{lstlisting}
+ui->Rez_label->setText(QString::number(CurrRez));
+\end{lstlisting}
+
+Functia DeciPress() trateaza introducerea numerelor cu parte fractionara
+
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.75]{"Deci"}
+ 			 \caption{Introducerea numerelor cu parte fractionara}
+ 			 \label{fig:Calcui}
+		\end{figure}
+		
+Functia SgnPress() trateaza schimbarea semnului numarului
+
+\begin{lstlisting}
+if (num > 0.0) {
+		toshow.prepend(tr("-"));
+	}
+	else if (num < 0.0) {
+		toshow.remove(0, 1);
+	}
+\end{lstlisting}
+
+Functia BackspacePress() trateaza eliminarea unui operand din calculul curent
+
+\begin{lstlisting}
+toshow.chop(1);
+\end{lstlisting}
+
+Functia ClearPress() trateaza eliberarea numerelor din label si stergerea valorilor curente
+
+\begin{lstlisting}
+CurrRez = 0.0;
+	CurrOp = 0.0;
+	NextAddOper.clear();
+	NextMultOper.clear();
+	ui->Rez_label->setText("0");
+	ui->temp_label->clear();
+\end{lstlisting}
+
+\end{itemize}
