@@ -26,7 +26,7 @@ class Ui_CalcClass
 public:
     QWidget *centralWidget;
     QLabel *Rez_label;
-    QPushButton *pushButton_pow;
+    QPushButton *pushButton_invert;
     QPushButton *pushButton_1;
     QPushButton *pushButton_4;
     QPushButton *pushButton_7;
@@ -46,9 +46,9 @@ public:
     QPushButton *pushButton_substraction;
     QPushButton *pushButton_9;
     QPushButton *pushButton_multiplication;
-    QPushButton *pushButton_backspace;
     QPushButton *pushButton_sqr;
     QPushButton *pushButton_division;
+    QLabel *temp_label;
 
     void setupUi(QMainWindow *CalcClass)
     {
@@ -70,13 +70,13 @@ public:
 "}\n"
 "\n"
 "background-color: white;"));
-        pushButton_pow = new QPushButton(centralWidget);
-        pushButton_pow->setObjectName(QStringLiteral("pushButton_pow"));
-        pushButton_pow->setGeometry(QRect(0, 90, 90, 60));
+        pushButton_invert = new QPushButton(centralWidget);
+        pushButton_invert->setObjectName(QStringLiteral("pushButton_invert"));
+        pushButton_invert->setGeometry(QRect(0, 90, 90, 60));
         QFont font1;
         font1.setPointSize(12);
-        pushButton_pow->setFont(font1);
-        pushButton_pow->setStyleSheet(QLatin1String("QPushButton\n"
+        pushButton_invert->setFont(font1);
+        pushButton_invert->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
 "border:none;\n"
 "background-color: rgb(224, 224, 224);\n"
@@ -169,7 +169,7 @@ public:
 "}"));
         pushButton_clear = new QPushButton(centralWidget);
         pushButton_clear->setObjectName(QStringLiteral("pushButton_clear"));
-        pushButton_clear->setGeometry(QRect(90, 150, 90, 60));
+        pushButton_clear->setGeometry(QRect(90, 150, 180, 60));
         pushButton_clear->setFont(font1);
         pushButton_clear->setStyleSheet(QLatin1String("QPushButton\n"
 "{\n"
@@ -341,20 +341,6 @@ public:
 "background-color:qlineargradient(x1:0, y1:0, z2:0, y2:1,\n"
 "						  stop: 0#A2B5CD, stop: 1#BCD2EE);\n"
 "}"));
-        pushButton_backspace = new QPushButton(centralWidget);
-        pushButton_backspace->setObjectName(QStringLiteral("pushButton_backspace"));
-        pushButton_backspace->setGeometry(QRect(180, 150, 90, 60));
-        pushButton_backspace->setFont(font1);
-        pushButton_backspace->setStyleSheet(QLatin1String("QPushButton\n"
-"{\n"
-"background-color: rgb(202, 255, 255);\n"
-"border: none;\n"
-"}\n"
-"QPushButton:pressed\n"
-"{\n"
-"background-color:qlineargradient(x1:0, y1:0, z2:0, y2:1,\n"
-"						  stop: 0#A2B5CD, stop: 1#BCD2EE);\n"
-"}"));
         pushButton_sqr = new QPushButton(centralWidget);
         pushButton_sqr->setObjectName(QStringLiteral("pushButton_sqr"));
         pushButton_sqr->setGeometry(QRect(180, 90, 90, 60));
@@ -383,6 +369,19 @@ public:
 "background-color:qlineargradient(x1:0, y1:0, z2:0, y2:1,\n"
 "						  stop: 0#A2B5CD, stop: 1#BCD2EE);\n"
 "}"));
+        temp_label = new QLabel(centralWidget);
+        temp_label->setObjectName(QStringLiteral("temp_label"));
+        temp_label->setGeometry(QRect(0, 0, 360, 31));
+        QFont font2;
+        font2.setPointSize(11);
+        temp_label->setFont(font2);
+        temp_label->setStyleSheet(QLatin1String("QLabel\n"
+"{\n"
+"	qproperty-alignment: 'AlignVCenter | AlignLeft';\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"background-color: white;"));
         CalcClass->setCentralWidget(centralWidget);
 
         retranslateUi(CalcClass);
@@ -394,11 +393,11 @@ public:
     {
         CalcClass->setWindowTitle(QApplication::translate("CalcClass", "Calc", 0));
         Rez_label->setText(QApplication::translate("CalcClass", "0", 0));
-        pushButton_pow->setText(QApplication::translate("CalcClass", "^", 0));
+        pushButton_invert->setText(QApplication::translate("CalcClass", "1/x", 0));
         pushButton_1->setText(QApplication::translate("CalcClass", "1", 0));
         pushButton_4->setText(QApplication::translate("CalcClass", "4", 0));
         pushButton_7->setText(QApplication::translate("CalcClass", "7", 0));
-        pushButton_centry->setText(QApplication::translate("CalcClass", "CE", 0));
+        pushButton_centry->setText(QApplication::translate("CalcClass", "<-", 0));
         pushButton_sgnch->setText(QApplication::translate("CalcClass", "\302\261", 0));
         pushButton_sqrt->setText(QApplication::translate("CalcClass", "\342\210\232", 0));
         pushButton_clear->setText(QApplication::translate("CalcClass", "C", 0));
@@ -414,9 +413,9 @@ public:
         pushButton_substraction->setText(QApplication::translate("CalcClass", "-", 0));
         pushButton_9->setText(QApplication::translate("CalcClass", "9", 0));
         pushButton_multiplication->setText(QApplication::translate("CalcClass", "*", 0));
-        pushButton_backspace->setText(QApplication::translate("CalcClass", "\342\214\253", 0));
         pushButton_sqr->setText(QApplication::translate("CalcClass", "x^2", 0));
         pushButton_division->setText(QApplication::translate("CalcClass", "/", 0));
+        temp_label->setText(QString());
     } // retranslateUi
 
 };

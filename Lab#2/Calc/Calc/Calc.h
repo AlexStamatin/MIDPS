@@ -16,6 +16,7 @@ private slots:
     void DigitPress();
     void SqrtOpPress();
     void SqrOpPress();
+    void InvertPress();
     void AddOpPress();
     void MultOpPress();
     void EqPress();

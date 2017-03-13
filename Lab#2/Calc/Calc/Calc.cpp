@@ -24,6 +24,7 @@ Calc::Calc(QWidget *parent)
 	connect(ui->pushButton_9, SIGNAL(released()), this, SLOT(DigitPress()));
 	connect(ui->pushButton_sqrt, SIGNAL(released()), this, SLOT(SqrtOpPress()));
 	connect(ui->pushButton_sqr, SIGNAL(released()), this, SLOT(SqrOpPress()));
+	connect(ui->pushButton_invert, SIGNAL(released()), this, SLOT(InvertPress()));
 	connect(ui->pushButton_addition, SIGNAL(released()), this, SLOT(AddOpPress()));
 	connect(ui->pushButton_substraction, SIGNAL(released()), this, SLOT(AddOpPress()));
 	connect(ui->pushButton_multiplication, SIGNAL(released()), this, SLOT(MultOpPress()));
@@ -31,7 +32,6 @@ Calc::Calc(QWidget *parent)
 	connect(ui->pushButton_result, SIGNAL(released()), this, SLOT(EqPress()));
 	connect(ui->pushButton_decimal, SIGNAL(released()), this, SLOT(DeciPress()));
 	connect(ui->pushButton_sgnch, SIGNAL(released()), this, SLOT(SgnPress()));
-	connect(ui->pushButton_backspace, SIGNAL(released()), this, SLOT(BackspacePress()));
 	connect(ui->pushButton_clear, SIGNAL(released()), this, SLOT(ClearPress()));
 	connect(ui->pushButton_centry, SIGNAL(released()), this, SLOT(ClearEPress()));
 }
@@ -127,6 +127,7 @@ void Calc::AddOpPress()
 	}
 	NextAddOper = Op;
 	NextOper = true;
+	ui->temp_label->setText(QString::number(oper) + Op);
 }
 void Calc::MultOpPress() {
 
@@ -147,6 +148,7 @@ void Calc::MultOpPress() {
 
 	NextMultOper = Op;
 	NextOper = true;
+	ui->temp_label->setText(QString::number(oper) + Op);
 
 }
 void Calc::EqPress() {
@@ -173,6 +175,7 @@ void Calc::EqPress() {
 		CurrRez = oper;
 	}
 	ui->Rez_label->setText(QString::number(CurrRez));
+	ui->temp_label->clear();
 	CurrRez = 0.0;
 	NextOper = true;
 
@@ -187,12 +190,51 @@ void Calc::DeciPress() {
 }
 void Calc::SgnPress() {
 
+	QString toshow = ui->Rez_label->text();
+	double num = ui->Rez_label->text().toDouble();
 
+	if (num > 0.0) {
+		toshow.prepend(tr("-"));
+	}
+	else if (num < 0.0) {
+		toshow.remove(0, 1);
+	}
+	ui->Rez_label->setText(toshow);
 
 }
-void Calc::BackspacePress() {}
-void Calc::ClearPress() {}
-void Calc::ClearEPress() {}
+void Calc::BackspacePress() {
+
+	if (NextOper)
+		return;
+
+	QString toshow = ui->Rez_label->text();
+	toshow.chop(1);
+
+	if (toshow.isEmpty()) {
+		toshow = "0";
+		NextOper = true;
+	}
+	ui->Rez_label->setText(toshow);
+
+}
+void Calc::ClearPress() {
+
+	CurrRez = 0.0;
+	CurrOp = 0.0;
+	NextAddOper.clear();
+	NextMultOper.clear();
+	ui->Rez_label->setText("0");
+	ui->temp_label->clear();
+	NextOper = true;
+
+}
+void Calc::ClearEPress(){
+	if (NextOper)
+		return;
+
+ui->Rez_label->setText("0");
+NextOper = true;
+}
 bool Calc::calculation(double firstOP, QString oper)
 {
 	if (oper == "+")
@@ -219,4 +261,23 @@ void Calc::InvalidOp()
 {
 	ui->Rez_label->setText("Error");
 }
+
+void Calc::InvertPress()
+{
+	QPushButton *button = (QPushButton*)sender();
+	QString Op = button->text();
+	double oper = ui->Rez_label->text().toDouble();
+	double rez = 0.0;
+	QString toshow;
+	if (oper < 0.0)
+	{
+		InvalidOp();
+		return;
+	}
+	rez = 1.0 / oper;
+	toshow = QString::number(rez, 'g', 15);
+	ui->Rez_label->setText(toshow);
+	NextOper = true;
+}
+
 
