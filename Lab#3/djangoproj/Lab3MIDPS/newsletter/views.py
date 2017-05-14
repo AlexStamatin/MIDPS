@@ -5,7 +5,7 @@ from .forms import ContactForm, SignUpForm
 # Create your views here.
 
 def home(request):
-	title = "Poppy"
+	title = "Welcome"
 	form = SignUpForm(request.POST or None)
 
 	context = {
@@ -23,6 +23,7 @@ def home(request):
 	return render(request,"home.html", context)
 
 def contact(request):
+	title = 'Contact Us'
 	form = ContactForm(request.POST or None)
 	if form.is_valid():
 		form_email = form.cleaned_data.get("email")
@@ -39,6 +40,7 @@ def contact(request):
 		 		 fail_silently=False)
 	context={
 	"form":form,
+	"title":title
 	}
 
 	return render(request, "forms.html", context)

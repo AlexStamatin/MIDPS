@@ -1,9 +1,82 @@
-<h1>{{title}}</h1>
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
 
-<form method='POST' action=''>{% csrf_token %}
-{{ form.as_p }}
+{% block head_title %}Welcome |{{block.super}} {% endblock %}
 
-<input type = 'submit' value = 'Signup' />
+<style>
+{% block style %}
+
+{% endblock %}
+</style>
+
+{% block bl %}
+<div class ="jumbotron">
+<div class="row">
+	<div class = 'col-sm-6'>
+      <!-- Main component for a primary marketing message or call to action -->
+    <!-- <div class="jumbotron"> -->
+    <h1>Inky-Pinky example</h1>
+    <p>Poppy is the absolute best actress eva</p>
+    <p>
+    <a class="btn btn-lg btn-primary" href="" role="button">Subscribe&raquo;</a>
+    </p>
+    </div>
+    <div class ='col-sm-4' style ="background-color:black; height:200px;">
+    </div>
+</div>
+</div> <!-- /container -->
+{% endblock %}
 
 
-</form>
+
+
+{% block bl_content %}
+<div class='col-sm-3'>
+<p class ='lead text-align-center'>Always blonde</p>
+</div>
+<div class='col-sm-3'>
+<p class='lead text-align-center'>Nice shiny blue eyes</p>
+</div>
+<div class='col-sm-3'>
+<p class = 'lead text-align-center'>Weird as fuck</p>
+</div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class='col-sm-3'>
+<p class ='lead text-align-center'>Always blonde</p>
+</div>
+<div class='col-sm-3'>
+<p class='lead text-align-center'>Nice shiny blue eyes</p>
+</div>
+<div class='col-sm-3'>
+<p class = 'lead text-align-center'>Weird as fuck</p>
+</div>
+
+
+
+<div class="row">
+  <div class="col-xs-3 pull-right">
+		
+
+
+
+		<p class='lead'>{{title}}</p>
+
+		<form method='POST' action=''>{% csrf_token %}
+		{{ form|crispy }}
+
+		<input class ='btn btn-primary'  type = 'submit' value = 'Sign Up' />
+
+		</form>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
