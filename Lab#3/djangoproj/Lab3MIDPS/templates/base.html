@@ -23,18 +23,22 @@
 
   <body>
   {% include 'navbar.html' %}
-  
+        {% block bl %}
+{% endblock %}
 
 
   <div class="container">
 
-      {% block bl %}
-      {% block bl_content %}
-      {% endblock %}
-      <div class="jumbotron">
+
       
-      </div>
-      {% endblock %}
+
+        
+
+<!--       <div class="jumbotron">
+        
+      </div> -->
+ {% block bl_content %}
+  {% endblock %}
       {% block content %}
 
       {% endblock %}

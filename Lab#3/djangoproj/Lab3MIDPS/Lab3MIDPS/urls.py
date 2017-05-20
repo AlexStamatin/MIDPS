@@ -18,6 +18,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from newsletter.views import contact, home
 from Lab3MIDPS.views import about
+from posts.views import Anime
+from posts.views import Animals
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,11 +27,15 @@ urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'^contact/$', contact, name='contact'),
     url(r'^about/$', about, name='about'),
+    url(r'^Anime/$', Anime, name='Anime'),
+    url(r'^Animals/$', Animals, name='Animals'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
 ] 
 
 if settings.DEBUG:
-	urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
-	static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+	# static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 

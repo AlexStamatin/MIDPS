@@ -1,16 +1,26 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block head_title %}Welcome |{{block.super}} {% endblock %}
 
 <style>
 {% block style %}
+.navbar-static-top{
+    margin-bottom: 0px;
+    background-color:#B3D3D1;
+}
 
+
+.jumbotron {
+    background-color:#B3D3D1;
+    color:#fff;
 {% endblock %}
 </style>
 
 {% block bl %}
 <div class ="jumbotron">
+<div class="container">
 <div class="row">
 	<div class = 'col-sm-6'>
       <!-- Main component for a primary marketing message or call to action -->
@@ -21,21 +31,25 @@
     <a class="btn btn-lg btn-primary" href="" role="button">Subscribe&raquo;</a>
     </p>
     </div>
-    <div class ='col-sm-4' style ="background-color:black; height:200px;">
-    </div>
+      <img src="{% static 'img/front_page_imgfix.png' %}" />/
 </div>
 </div> <!-- /container -->
+</div>
+</div>
 {% endblock %}
 
 
 
 
 {% block bl_content %}
+
 <div class='col-sm-3'>
-<p class ='lead text-align-center'>Always blonde</p>
+<!-- <p class ='lead text-align-center'>Always blonde</p> -->
+<a class="navbar-brand" href="{%url 'Anime' %}">Anime</a>
+
 </div>
 <div class='col-sm-3'>
-<p class='lead text-align-center'>Nice shiny blue eyes</p>
+<a class="navbar-brand" href="{%url 'Animals' %}">Animals</a>
 </div>
 <div class='col-sm-3'>
 <p class = 'lead text-align-center'>Weird as fuck</p>
@@ -45,25 +59,9 @@
 {% endblock %}
 
 {% block content %}
-
-<div class='col-sm-3'>
-<p class ='lead text-align-center'>Always blonde</p>
-</div>
-<div class='col-sm-3'>
-<p class='lead text-align-center'>Nice shiny blue eyes</p>
-</div>
-<div class='col-sm-3'>
-<p class = 'lead text-align-center'>Weird as fuck</p>
-</div>
-
-
-
+<div class="container">
 <div class="row">
   <div class="col-xs-3 pull-right">
-		
-
-
-
 		<p class='lead'>{{title}}</p>
 
 		<form method='POST' action=''>{% csrf_token %}
@@ -74,9 +72,5 @@
 		</form>
     </div>
 </div>
-
-
-
-
-
+</div>
 {% endblock %}
