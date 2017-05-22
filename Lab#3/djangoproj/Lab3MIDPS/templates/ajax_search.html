@@ -1,0 +1,10 @@
+
+{% if posts.count > 0 %}
+
+{% for post in posts %}
+	<li><p>{{post.title}}</p></li>
+{% endfor %}
+
+{%else%}
+<li>None to show</li>
+{%endif%}

@@ -20,6 +20,11 @@ from newsletter.views import contact, home
 from Lab3MIDPS.views import about
 from posts.views import Anime
 from posts.views import Animals
+from posts.views import Cities
+from posts.views import Cars
+from posts.views import Flowers
+from posts.views import Food
+from posts.views import Nature
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,6 +34,11 @@ urlpatterns = [
     url(r'^about/$', about, name='about'),
     url(r'^Anime/$', Anime, name='Anime'),
     url(r'^Animals/$', Animals, name='Animals'),
+    url(r'^Cars/$', Cars, name='Cars'),
+    url(r'^Cities/$', Cities, name='Cities'),
+    url(r'^Flowers/$', Flowers, name='Flowers'),
+    url(r'^Nature/$', Nature, name='Nature'),
+    url(r'^Food/$', Food, name='Food'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
 ] 

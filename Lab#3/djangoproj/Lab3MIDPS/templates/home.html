@@ -2,18 +2,18 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block head_title %}Welcome |{{block.super}} {% endblock %}
+{% block head_title %}Welcome |Wallpers HD {% endblock %}
 
 <style>
 {% block style %}
 .navbar-static-top{
     margin-bottom: 0px;
-    background-color:#B3D3D1;
+    background-color:#1aa3ff;
 }
 
 
 .jumbotron {
-    background-color:#B3D3D1;
+    background-color:#1aa3ff;
     color:#fff;
 {% endblock %}
 </style>
@@ -25,13 +25,13 @@
 	<div class = 'col-sm-6'>
       <!-- Main component for a primary marketing message or call to action -->
     <!-- <div class="jumbotron"> -->
-    <h1>Inky-Pinky example</h1>
-    <p>Poppy is the absolute best actress eva</p>
+    <h1>Wallpapers HD</h1>
+    <p>Wallpapers HD is a collection of the best wallpapers for your PC</p>
     <p>
-    <a class="btn btn-lg btn-primary" href="" role="button">Subscribe&raquo;</a>
+    <a class="btn btn-lg btn-primary" href="{% url 'registration_register' %}" role="button">Join now&raquo;</a>
     </p>
     </div>
-      <img src="{% static 'img/front_page_imgfix.png' %}" />/
+      <img src="{% static 'img/Front_page_imgfix.png' %}" />/
 </div>
 </div> <!-- /container -->
 </div>
@@ -39,38 +39,59 @@
 {% endblock %}
 
 
-
-
-{% block bl_content %}
-
-<div class='col-sm-3'>
-<!-- <p class ='lead text-align-center'>Always blonde</p> -->
-<a class="navbar-brand" href="{%url 'Anime' %}">Anime</a>
-
-</div>
-<div class='col-sm-3'>
-<a class="navbar-brand" href="{%url 'Animals' %}">Animals</a>
-</div>
-<div class='col-sm-3'>
-<p class = 'lead text-align-center'>Weird as fuck</p>
-</div>
-</div>
-
-{% endblock %}
-
 {% block content %}
 <div class="container">
 <div class="row">
-  <div class="col-xs-3 pull-right">
-		<p class='lead'>{{title}}</p>
+  <div class="col-sm-3 pull-right">
+        <p class='lead'>{{title}}</p>
 
-		<form method='POST' action=''>{% csrf_token %}
-		{{ form|crispy }}
+        <form method='POST' action=''>{% csrf_token %}
+        {{ form|crispy }}
 
-		<input class ='btn btn-primary'  type = 'submit' value = 'Sign Up' />
+        <input class ='btn btn-primary'  type = 'submit' value = 'Sign Up' />
 
-		</form>
+        </form>
     </div>
 </div>
 </div>
 {% endblock %}
+
+{% block bl_content %}
+
+<div class='col-sm-3'>
+<a class="navbar-brand" href="{%url 'Anime' %}">Anime</a>
+<img src="{% static 'img/AnimeFront.png' %}" />
+</div>
+
+<div class='col-sm-3'>
+<a class="navbar-brand" href="{%url 'Animals' %}" class='img-responsive'>Animals</a>
+<img src="{% static 'img/AnimalsFront.png' %}" />
+</div>
+
+<div class='col-sm-3'>
+<a class="navbar-brand" href="{%url 'Cars' %}" class='img-responsive'>Cars</a>
+<img src="{% static 'img/CarsFront.png' %}" />
+</div>
+
+<div class='col-sm-3'>
+<a class="navbar-brand" href="{%url 'Cities' %}" class='img-responsive'>Cities</a>
+<img src="{% static 'img/CitiesFront.png' %}" />
+</div>
+
+<div class='col-sm-3'>
+<a class="navbar-brand" href="{%url 'Flowers' %}" class='img-responsive'>Flowers</a>
+<img src="{% static 'img/FlowersFront.png' %}" />
+</div>
+
+<div class='col-sm-3'>
+<a class="navbar-brand" href="{%url 'Food' %}" class='img-responsive'>Food</a>
+<img src="{% static 'img/FoodFront.png' %}" />
+</div>
+
+<div class='col-sm-3'>
+<a class="navbar-brand" href="{%url 'Nature' %}" class='img-responsive'>Nature</a>
+<img src="{% static 'img/NatureFront.png' %}" />
+</div>
+
+{% endblock %}
+

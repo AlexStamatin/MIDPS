@@ -2,10 +2,11 @@ body {
   min-height: 2000px;
 }
 
-.navbar-static-top {
-  margin-bottom: 19px;
-  background-color:#ff7f83;
+.navbar-static-top{
+ margin-bottom: 0px;
+ background-color:#1aa3ff;
 }
+
 
 .navbar-default .navbar-brand {
 	 color: #FFF;

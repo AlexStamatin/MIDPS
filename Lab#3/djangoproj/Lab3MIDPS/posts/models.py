@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.conf import settings
+from django.core.urlresolvers import reverse
 # Create your models here.
 
 class Post(models.Model):
@@ -7,6 +8,7 @@ class Post(models.Model):
 	timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 	image = models.FileField(null=True, blank=True)
 	category = models.CharField(max_length=120, blank=True)
+
 
 	def __str__(self):
 		return self.title

@@ -1,0 +1,21 @@
+{%extends "base.html" %}
+{% load static %}
+
+{%block content %}
+<p class='lead text-align-left'>Flowers</p>
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3'>
+
+
+{% for obj in object_list %}
+{% if obj.category == 'Flowers' %}
+<p class='lead text-align-center'>{{obj.title}}</p>
+<div class="row">
+	<div class="col-sm=12">
+		<img src='{{obj.image.url}}' class='img-responsive'/>
+<p class='lead text-align-center'>{{obj.timestamp}}</p>
+{%endif%}
+{%endfor%}
+</div>
+</div>
+{%endblock%}

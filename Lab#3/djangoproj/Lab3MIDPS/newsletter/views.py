@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm, SignUpForm
+import json
+from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
@@ -44,3 +46,5 @@ def contact(request):
 	}
 
 	return render(request, "forms.html", context)
+
+	
