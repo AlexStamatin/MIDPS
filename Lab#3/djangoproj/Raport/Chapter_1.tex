@@ -1,0 +1,78 @@
+\section{Efectuarea lucrarii de laborator}
+
+\subsection{Sarcinile propuse}
+\begin{itemize}
+	\item Realizarea unui website personal unde vor fi afisate wallpaper-uri de inalta calitate din diferite categorii
+	\item Pastrarea tuturor imaginilor afisate pe site intr-o baza de date pentru simplificarea adaugarii si stergerii acestora
+\end{itemize}
+
+
+\subsection{Analiza lucrarii de laborator}
+
+Link la repozitoriu: https://github.com/AlexStamatin/MIDPS
+	
+	In cadrul acestei lucrari de laborator am elaborat un website pentru publicarea wallpaper-urilor din diferite categorii. Pentru realizarea acestui scop a fost utilizat framework-ul Django 1.11 pentru Python 3.6. De asemenea au fost utilizate mai multe module, cum ar fi Crispy forms pentru aspectul grafic al campurilor de introducere a textului si butoanelor si Django Registration Redux pentru realizarea sistemului de inregistrare pe website.
+
+\begin{itemize}
+	\item Interfata site-ului
+	
+
+	Toate paginile site-ului contin o bara de navigare NavBar realizata cu ajutorul framework-ului Bootstrap pentru accesarea mai usoara a functionalitatilor site-ului.
+	Prima pagina contine un banner cu o descriere scurta a scopului prezentului website si optiuni pentru logare/inregistrare. De asemenea sunt prezentate categoriile de imagini disponibile.	
+		\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.5]{"FrontPage"}
+ 			 \caption{Pagina principala}
+ 			 \label{fig:Pagina principala}
+		\end{figure}	
+	\newpage
+	In cadrul fiecarei categorii sunt prezentate imagini insotite de titlu si data incarcarii
+	
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.5]{"AnimePage"}
+ 			 \caption{Pagina unei categorii de imagini}
+ 			 \label{fig:AnimePage}
+		\end{figure}
+\newpage
+	Este prezenta optiunea de feedback din partea utilizatorilor in caz de sugestii sau plangeri cu privire la drepturile de autor
+	
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.5]{"ContactPage"}
+ 			 \caption{Pagina pentru feedback}
+ 			 \label{fig:Calcui}
+		\end{figure}
+		
+	Pentru o navigare mai comoda a site-ului utilizatorii au optiunea de a se inregistra
+	\newpage
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.5]{"RegistrationPage"}
+ 			 \caption{Pagina de inregistrare}
+ 			 \label{fig:Calcui}
+		\end{figure}
+\newpage
+	\item Functionalitatea website-ului
+	
+	Toate imaginile de pe site sunt pastrate intr-o baza de date. Acestea au un titlu, o anumita categorie si data de incarcare.Imaginile pot fi usor adaugate sau scoase la dorinta administratorului
+
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.5]{"Images"}
+ 			 \caption{Baza de date a imaginilor}
+ 			 \label{fig:Calcui}
+		\end{figure}
+		
+	Datele despre utilizatori de asemenea se pastreaza intr-o baza de date. Administratorul poate adauga utilizatori noi, activa conturile acestora sau ii poate sterge din baza.
+
+
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=0.5]{"Users"}
+ 			 \caption{Baza de date a utilizatorilor}
+ 			 \label{fig:Calcui}
+		\end{figure}
+
+
+\end{itemize}

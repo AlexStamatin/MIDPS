@@ -1,0 +1,63 @@
+\section{Efectuarea lucrarii de laborator}
+
+\subsection{Sarcinile propuse}
+\begin{itemize}
+	\item Dezvoltarea unei aplicatii pentru management-ul eficient al contactelor
+	\item Pastrarea tuturor contactelor intr-o baza de date cu optiuni de adaugare, stergere si editare a acestora
+\end{itemize}
+
+
+\subsection{Analiza lucrarii de laborator}
+
+Link la repozitoriu: https://github.com/artiomnichifor/midps
+		
+	In cadrul acestei lucrari de laborator am elaborat o aplicatie pentru management-ul contactelor la telefonul mobil. Pentru realizarea acestui scop am utilizat mediul de dezvoltare a aplicatiilor Android Studio. Pentru pastrarea contactelor am utilizat o baza de date Sqlite si am utilizat functionalitati aditionale din SqlHelper.
+
+\begin{itemize}
+	\item Interfata aplicatiei
+	
+
+Interfata cu utilizatorul a fost creata cu ajutorul instrumentelor disponibile in Android Studio. Au fost utilizate campuri pentru introducerea textului si butoane pentru navigare
+		\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=1]{"firstpage"}
+ 			 \caption{Adaugarea unui contact in lista}
+ 			 \label{fig:Pagina principala}
+		\end{figure}	
+	\newpage
+Informatia despre fiecare contact poate fi vuzializata in cadrul unei liste
+	
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=1]{"2nd page"}
+ 			 \caption{Lista de contacte}
+ 			 \label{fig:AnimePage}
+		\end{figure}
+
+\newpage
+	\item Functionalitatea aplicatiei
+	
+	Toate contactele din cadrul aplicatiei sunt pastrate intr-o baza de date SQLite. 
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=1]{"contacts"}
+ 			 \caption{Formatul de pastrare a contactelor}
+ 			 \label{fig:Calcui}
+		\end{figure}
+		
+Pentru operarea cu acestea au fost utilizate functii din SQLiteDataBase si SQLiteOpenHelper
+
+
+\lstinputlisting[language=C++, caption={Utilizarea bazei de date},firstline=15,lastline=28]{DatabaseHandler.java}
+
+In cadrul lucrului in echipa, fiecare membru a muncit pe un branch iar la sfarsit am realizat merge pe branch-ul master.
+
+	\begin{figure}[h!]
+			\centering
+ 			 \includegraphics[scale=1]{"merge"}
+ 			 \caption{Utilizarea comenzii merge}
+ 			 \label{fig:Calcui}
+		\end{figure}
+
+
+\end{itemize}
